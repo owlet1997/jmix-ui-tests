@@ -5,6 +5,7 @@ import io.jmix.masquerade.base.Composite
 import io.jmix.masquerade.component.Button
 import io.jmix.masquerade.component.SideMenu
 import io.jmix.tests.ui.screen.administration.datatools.EntityInspectorBrowse
+import io.jmix.tests.ui.screen.application.email.EmailScreen
 import io.jmix.tests.ui.screen.application.company.CompanyBrowse
 import io.jmix.tests.ui.screen.application.user.UserBrowse
 import io.jmix.tests.ui.screen.reports.browser.ReportBrowse
@@ -35,6 +36,12 @@ class MainScreen extends Composite<MainScreen> {
     UserBrowse openUserBrowse() {
         sideMenu.openItem(USER_BROWSE)
     }
+
+    EmailScreen openEmailScreen() {
+        sideMenu.openItem(EMAIL_SCREEN)
+    }
+
+
 
     ReportBrowse openReportsBrowse() {
         sideMenu.openItem(REPORTS_BROWSE)

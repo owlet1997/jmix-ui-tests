@@ -10,6 +10,7 @@ jmix {
     bomVersion = '1.1.0-SNAPSHOT'
 }
 
+
 group = 'io.jmix.tests'
 sourceCompatibility = '1.8'
 
@@ -21,6 +22,9 @@ repositories {
 }
 
 dependencies {
+    implementation 'io.jmix.email:jmix-email-starter'
+    implementation 'io.jmix.email:jmix-email-ui-starter'
+    implementation 'org.springframework.boot:spring-boot-starter-quartz'
     implementation 'io.jmix.core:jmix-core-starter'
     implementation 'io.jmix.data:jmix-eclipselink-starter'
     implementation 'io.jmix.ui:jmix-ui-starter'
@@ -29,8 +33,6 @@ dependencies {
     implementation 'io.jmix.security:jmix-security-starter'
     implementation 'io.jmix.security:jmix-security-ui-starter'
     implementation 'io.jmix.security:jmix-security-data-starter'
-    implementation 'io.jmix.dynattr:jmix-dynattr-starter'
-    implementation 'io.jmix.dynattr:jmix-dynattr-ui-starter'
     implementation 'io.jmix.audit:jmix-audit-starter'
     implementation 'io.jmix.audit:jmix-audit-ui-starter'
     implementation 'io.jmix.datatools:jmix-datatools-starter'
@@ -138,6 +140,9 @@ task testSampler(type: Test) {
 }
 
 test.dependsOn testUi, testSampler
+compileWidgets {
+    generate "io.jmix.tests.widgets.CustomWidgetSet"
+}
 compileWidgets {
     generate "io.jmix.tests.widgets.CustomWidgetSet"
 }

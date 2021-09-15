@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://jmix.io/schema/ui/window"
+        caption="msg://blankScreenEmail.caption">
+    <layout>
+        <textField id="subject" caption="subject"/>
+        <button id="sync" primary="false" caption="msg://sync.caption"/>
+        <button id="async" primary="false" caption="msg://async.caption"/>
+        <button id="send" primary="false" caption="msg://send.caption"/>
+    </layout>
+</window>

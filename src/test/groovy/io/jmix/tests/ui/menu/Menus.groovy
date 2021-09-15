@@ -9,6 +9,8 @@ import io.jmix.tests.screen.individual.IndividualBrowse
 import io.jmix.tests.ui.screen.administration.audit.EntityLogBrowse
 import io.jmix.tests.ui.screen.administration.datatools.EntityInspectorBrowse
 import io.jmix.tests.ui.screen.administration.dynattr.DynamicAttributeBrowse
+import io.jmix.tests.ui.screen.application.email.EmailScreen
+import io.jmix.tests.ui.screen.application.company.CompanyBrowse
 import io.jmix.tests.ui.screen.application.company.CompanyBrowse
 import io.jmix.tests.ui.screen.application.user.UserBrowse
 import io.jmix.tests.ui.screen.reports.browser.ReportBrowse
@@ -49,5 +51,11 @@ final class Menus {
     public static final SideMenu.Menu<ReportRunScreen> REPORTS_RUN_SCREEN =
             new SideMenu.Menu<>(ReportRunScreen, 'reports', 'report_Report.run')
 
+
+    public static final SideMenu.Menu<EmailScreen> EMAIL_SCREEN =
+            new SideMenu.Menu<>(EmailScreen, 'application', 'BlankScreenEmail')
+
+    public static final SideMenu.Menu<EntityInspectorBrowse> EMAIL_HISTORY=
+            new SideMenu.Menu<>(EntityInspectorBrowse, 'administration', 'email_SendingMessage.browse')
 
 }

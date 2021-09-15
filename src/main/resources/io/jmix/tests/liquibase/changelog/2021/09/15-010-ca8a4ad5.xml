@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.3.xsd"
+        objectQuotingStrategy="QUOTE_ONLY_RESERVED_WORDS">
+    <changeSet id="1" author="jmixuitests" context="base">
+        <dropForeignKeyConstraint baseTableName="QRTZ_TRIGGERS" constraintName="SYS_FK_10452"/>
+    </changeSet>
+    <changeSet id="2" author="jmixuitests" context="base">
+        <dropForeignKeyConstraint baseTableName="QRTZ_SIMPLE_TRIGGERS" constraintName="SYS_FK_10471"/>
+    </changeSet>
+    <changeSet id="3" author="jmixuitests" context="base">
+        <dropForeignKeyConstraint baseTableName="QRTZ_CRON_TRIGGERS" constraintName="SYS_FK_10486"/>
+    </changeSet>
+    <changeSet id="4" author="jmixuitests" context="base">
+        <dropForeignKeyConstraint baseTableName="QRTZ_SIMPROP_TRIGGERS" constraintName="SYS_FK_10498"/>
+    </changeSet>
+    <changeSet id="5" author="jmixuitests" context="base">
+        <dropForeignKeyConstraint baseTableName="QRTZ_BLOB_TRIGGERS" constraintName="SYS_FK_10509"/>
+    </changeSet>
+    <changeSet id="6" author="jmixuitests" context="base">
+        <dropTable cascadeConstraints="true" tableName="QRTZ_BLOB_TRIGGERS"/>
+    </changeSet>
+    <changeSet id="7" author="jmixuitests" context="base">
+        <dropTable cascadeConstraints="true" tableName="QRTZ_CALENDARS"/>
+    </changeSet>
+    <changeSet id="8" author="jmixuitests" context="base">
+        <dropTable cascadeConstraints="true" tableName="QRTZ_CRON_TRIGGERS"/>
+    </changeSet>
+    <changeSet id="9" author="jmixuitests" context="base">
+        <dropTable cascadeConstraints="true" tableName="QRTZ_FIRED_TRIGGERS"/>
+    </changeSet>
+    <changeSet id="10" author="jmixuitests" context="base">
+        <dropTable cascadeConstraints="true" tableName="QRTZ_JOB_DETAILS"/>
+    </changeSet>
+    <changeSet id="11" author="jmixuitests" context="base">
+        <dropTable cascadeConstraints="true" tableName="QRTZ_LOCKS"/>
+    </changeSet>
+    <changeSet id="12" author="jmixuitests" context="base">
+        <dropTable cascadeConstraints="true" tableName="QRTZ_PAUSED_TRIGGER_GRPS"/>
+    </changeSet>
+    <changeSet id="13" author="jmixuitests" context="base">
+        <dropTable cascadeConstraints="true" tableName="QRTZ_SCHEDULER_STATE"/>
+    </changeSet>
+    <changeSet id="14" author="jmixuitests" context="base">
+        <dropTable cascadeConstraints="true" tableName="QRTZ_SIMPLE_TRIGGERS"/>
+    </changeSet>
+    <changeSet id="15" author="jmixuitests" context="base">
+        <dropTable cascadeConstraints="true" tableName="QRTZ_SIMPROP_TRIGGERS"/>
+    </changeSet>
+    <changeSet id="16" author="jmixuitests" context="base">
+        <dropTable cascadeConstraints="true" tableName="QRTZ_TRIGGERS"/>
+    </changeSet>
+</databaseChangeLog>

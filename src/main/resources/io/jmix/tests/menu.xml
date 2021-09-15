@@ -16,6 +16,7 @@
         <item screen="WayBill.browse" caption="msg://io.jmix.tests.screen.waybill/wayBillBrowse.caption"/>
         <item screen="WayBillItem.browse" caption="msg://io.jmix.tests.screen.waybillitem/wayBillItemBrowse.caption"/>
         <item screen="Atmosphere.browse" caption="msg://io.jmix.tests.screen.atmosphere/atmosphereBrowse.caption"/>
+        <item screen="BlankScreenEmail" caption="msg://io.jmix.tests.screen.blank/blankScreenEmail.caption"/>
     </menu>
 
 </menu-config>
