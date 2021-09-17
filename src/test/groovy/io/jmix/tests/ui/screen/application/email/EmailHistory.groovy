@@ -14,9 +14,9 @@ import static io.jmix.masquerade.Selectors.byCells
 
 class EmailHistory extends Composite<EmailHistory> {
 
-    public static final String ADDRESS = "destination@haulmont.com"
-    public static final String CC = "cc@haulmont.com"
-    public static final String BCC = "bcc@haulmont.com"
+    public static final String ADDRESS = "testadress@mail"
+    public static final String CC = "testCc@mail"
+    public static final String BCC = "testBcc@mail"
     public static final String QUEUE = 'Queue'
     public static final String SENT = 'Sent'
     public static final String ATTACHMENT = 'emailAttach.png;'

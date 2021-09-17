@@ -10,6 +10,7 @@ import io.jmix.ui.screen.UiController;
 import io.jmix.ui.screen.UiDescriptor;
 import org.apache.commons.compress.utils.IOUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.env.Environment;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -24,15 +25,18 @@ public class BlankScreenEmail extends Screen {
     @Autowired
     private TextField subject;
 
+    @Autowired
+    private Environment environment;
+
     @Subscribe("sync")
     public void onSyncClick(Button.ClickEvent event) throws EmailException, IOException {
         InputStream resourceAsStream = resources.getResourceAsStream("emailAttach.png");
         byte[] bytes = IOUtils.toByteArray(resourceAsStream);
         EmailAttachment emailAtt = new EmailAttachment(bytes, "emailAttach.png", "icoId");
-        EmailInfo emailInfo = EmailInfoBuilder.create("test@haulmont.com",
-                subject.getRawValue(), "Email body").setFrom("test@haulmont.dev")
-                .setBcc("test@haulmont.com")
-                .setCc("test@haulmont.com")
+        EmailInfo emailInfo = EmailInfoBuilder.create("testadress@mail",
+                subject.getRawValue(), "Email body").setFrom("jmix.email.fromAddress")
+                .setBcc("testBcc@mail")
+                .setCc("testCc@mail")
                 .setAttachments(emailAtt)
                 .build();
 
@@ -41,10 +45,10 @@ public class BlankScreenEmail extends Screen {
 
     @Subscribe("async")
     public void onAsyncClick(Button.ClickEvent event) {
-        EmailInfo emailInfo = EmailInfoBuilder.create("test@haulmont.com",
-                subject.getRawValue(), "Email body").setFrom("test@haulmont.dev")
-                .setBcc("test@haulmont.com")
-                .setCc("test@haulmont.com")
+        EmailInfo emailInfo = EmailInfoBuilder.create("testadress@mail",
+                        subject.getRawValue(), "Email body").setFrom("jmix.email.fromAddress")
+                .setBcc("testBcc@mail")
+                .setCc("testCc@mail")
                 .build();
         emailer.sendEmailAsync(emailInfo);
     }

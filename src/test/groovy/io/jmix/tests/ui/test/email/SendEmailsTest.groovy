@@ -24,7 +24,7 @@ import static io.jmix.tests.ui.menu.Menus.EMAIL_SCREEN
 ])
 @SpringBootTest(classes = JmixUiTestsApplication,
         webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT,
-        properties = ['jmix.email.fromAddress=test@mail.ru'])
+        properties = ['jmix.liquibase.contexts=base'])
 @ContextConfiguration(initializers = PostgreSQLContextInitializer)
 
 class SendEmailsTest extends BaseDatatoolsUiTest {
