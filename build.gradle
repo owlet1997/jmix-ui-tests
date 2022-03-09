@@ -18,6 +18,13 @@ repositories {
     maven {
         url 'https://nexus.jmix.io/repository/public'
     }
+    maven {
+        url = 'https://nexus.jmix.io/repository/premium'
+        credentials {
+            username = rootProject['premiumRepoUser']
+            password = rootProject['premiumRepoPass']
+        }
+    }
 }
 
 dependencies {
@@ -70,6 +77,9 @@ dependencies {
     implementation "io.jmix.ui:jmix-charts-starter"
     widgets "io.jmix.ui:jmix-pivot-table-widgets"
     implementation "io.jmix.ui:jmix-pivot-table-starter"
+    implementation("io.jmix.webdav:jmix-webdav-starter")
+    implementation("io.jmix.webdav:jmix-webdav-ui-starter")
+    implementation("io.jmix.webdav:jmix-webdav-rest-starter")
 }
 
 task testUi(type: Test) {
