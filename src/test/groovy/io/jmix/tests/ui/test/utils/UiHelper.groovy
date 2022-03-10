@@ -2,8 +2,10 @@ package io.jmix.tests.ui.test.utils
 
 import io.jmix.masquerade.component.Button
 import io.jmix.masquerade.component.ComboBox
+import io.jmix.masquerade.component.FileUploadField
 import io.jmix.masquerade.component.Notification
 import io.jmix.masquerade.component.TextField
+import org.testcontainers.shaded.org.apache.commons.io.FileUtils
 
 import static io.jmix.masquerade.Conditions.EDITABLE
 import static io.jmix.masquerade.Conditions.ENABLED
@@ -86,6 +88,21 @@ trait UiHelper {
         field.shouldBe(VISIBLE)
                 .shouldBe(EDITABLE)
                 .setValue(value)
+    }
+
+    /**
+     * Renames and uploads file
+     * @param fileUploadField
+     * @param filePath - place of file
+     * @param newName - new file name
+     */
+    void uploadNewDocument(FileUploadField fileUploadField, String filePath, String newName) {
+
+        File file = new File(filePath)
+        File newFile = new File(newName)
+        FileUtils.copyFile(file, newFile)
+
+        fileUploadField.upload(newFile)
     }
 
 }
